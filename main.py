@@ -1,16 +1,31 @@
-# This is a sample Python script.
+import random
 
-# Press Ctrl+F5 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+def guess_the_number():
+    # Generate a random number between 1 and 100
+    secret_number = random.randint(1, 100)
+    attempts = 0
+    guessed = False
 
+    print("Welcome to the Guess the Number Game!")
+    print("I'm thinking of a number between 1 and 100.")
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press F9 to toggle the breakpoint.
+    while not guessed:
+        try:
+            # Get user input
+            guess = int(input("Enter your guess: "))
+            attempts += 1
 
+            # Compare the guess to the secret number
+            if guess < secret_number:
+                print("Too low! Try again.")
+            elif guess > secret_number:
+                print("Too high! Try again.")
+            else:
+                print(f"Congratulations! You guessed the number in {attempts} attempts.")
+                guessed = True
+        except ValueError:
+            # Handle the case where the user doesn't enter a valid integer
+            print("Invalid input. Please enter a valid integer.")
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+if __name__ == "__main__":
+    guess_the_number()
