@@ -137,6 +137,7 @@ plt.ylabel('Skeletal Muscle Mass')
 plt.grid()
 plt.show()
 
+
 # توزیع میزان عملکرد ذهنی بر حسب جنسیت
 plt.figure(figsize=(8, 5))
 sns.boxplot(x='Sex', y='CGAS-Score', data=hbn_data, palette='Set3')
