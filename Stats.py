@@ -9,7 +9,7 @@ data_dictionary = pd.read_csv('data_dictionary.csv')
 parquet_file_path = 'E:/programing/code/quera/first project/series.parquet'
 series_data = pd.read_parquet(parquet_file_path)
 # ادغام دو دیتاست براساس ستون id
-combined_data = pd.merge(hbn_data, series_data, on='id', how='inner')
+combined_data = pd.merge(hbn_data, series_data, on='id', how='left')
 
 # بررسی توزیع سن
 plt.figure(figsize=(8, 5))
@@ -66,7 +66,7 @@ plt.show()
 # نمودار Barplot برای درصد مقادیر گمشده در هر ستون
 plt.figure(figsize=(10, 6))
 msno.bar(hbn_data)
-plt.title("Missing Data Barplot")
+plt.title("Existing Data Barplot")
 plt.show()
 
 #presenting what we should know about dataset
